@@ -9,7 +9,7 @@ public class PlayerInputs : MonoBehaviour
     private const float inputEpsilon = 0.5f;
     [SerializeField] private GameObject[] flashlights = new GameObject[2];
     private int currentFlashlight = 0;
-    private bool flashlightOn = true;
+    private bool flashlightOn = false;
 
     public void RotateCamera(InputAction.CallbackContext context)
     {
