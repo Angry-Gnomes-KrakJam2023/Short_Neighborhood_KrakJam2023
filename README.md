@@ -2,7 +2,7 @@
 
 ## Taski
 
-- [ ] Pokój w kształcie T
+- [x] Pokój w kształcie T
 - [x] Kamera obracająca się w 3 strony
 - [ ] 2 Spot lighty na pokój pod klawiszami (UV, Flashlight)
 - [ ] Zachowanie przeciwnika idącego w stronę korzenia (animacje, poruszanie się)
