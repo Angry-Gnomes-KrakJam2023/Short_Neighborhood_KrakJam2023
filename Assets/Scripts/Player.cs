@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [Header("Rotation settings")]
     public List<float> RotationAngles;
     public int DefaultAngleIndex = 1;
-    [Range(0f, 5f)] public float RotationSpeed = 1f;
+    [Range(3f, 10f)] public float RotationSpeed = 1f;
 
     public static Player Singleton { get; private set; }
 
