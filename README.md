@@ -7,5 +7,5 @@
 - [ ] 2 Spot lighty na pokój pod klawiszami (UV, Flashlight)
 - [ ] Zachowanie przeciwnika idącego w stronę korzenia (animacje, poruszanie się)
 - [ ] Korzeń (animacje, stan zdrowia)
-- [X] Ekran menu (placeholder gotowy)
-- [ ] Ekran porażki
+- [X] Ekran menu (placeholder)
+- [X] Ekran porażki (placeholder)
