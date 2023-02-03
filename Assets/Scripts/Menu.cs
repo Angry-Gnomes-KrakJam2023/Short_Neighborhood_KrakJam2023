@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private string mainSceneName;
+    [SerializeField] private int mainSceneNumber;
     
     public static Menu Singleton {get; private set;}
 
@@ -23,7 +23,7 @@ public class Menu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene(mainSceneName);
+        SceneManager.LoadScene(mainSceneNumber);
     }
 
     public void Quit()
