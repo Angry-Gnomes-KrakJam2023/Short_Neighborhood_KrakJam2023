@@ -7987,6 +7987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e67dcf3d5a01634e9092e7a18424d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!114 &905705361410637613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7999,6 +8000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e67dcf3d5a01634e9092e7a18424d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!114 &905705361512128440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8011,6 +8013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e67dcf3d5a01634e9092e7a18424d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!114 &905705361875713714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8023,6 +8026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e67dcf3d5a01634e9092e7a18424d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!4 &921071141064928750
 Transform:
   m_ObjectHideFlags: 0
@@ -26601,6 +26605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f295bd5f5abc04d99a37acbec469d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RoomID: 1
   enemyToSpawn: {fileID: 7961038819193751606, guid: 7f670a5b8337d3549a6c480cae58f69a,
     type: 3}
   enemySpawnerLocation: {fileID: 6868046525438096682}
@@ -26616,6 +26621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f295bd5f5abc04d99a37acbec469d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RoomID: 1
   enemyToSpawn: {fileID: 7961038819193751606, guid: 7f670a5b8337d3549a6c480cae58f69a,
     type: 3}
   enemySpawnerLocation: {fileID: 6868046525336065471}
@@ -26631,6 +26637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f295bd5f5abc04d99a37acbec469d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RoomID: 1
   enemyToSpawn: {fileID: 7961038819193751606, guid: 7f670a5b8337d3549a6c480cae58f69a,
     type: 3}
   enemySpawnerLocation: {fileID: 6868046525652497589}
@@ -26646,6 +26653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f295bd5f5abc04d99a37acbec469d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RoomID: 1
   enemyToSpawn: {fileID: 7961038819193751606, guid: 7f670a5b8337d3549a6c480cae58f69a,
     type: 3}
   enemySpawnerLocation: {fileID: 6868046525927488192}
