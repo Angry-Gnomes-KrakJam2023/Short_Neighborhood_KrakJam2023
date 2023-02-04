@@ -26,7 +26,8 @@ public class Spawner : MonoBehaviour
             return;
         }
 
-        Instantiate(enemyToSpawn, enemySpawnerLocation.position, Quaternion.identity, transform);
+        Enemy enemy = Instantiate(enemyToSpawn, enemySpawnerLocation.position, Quaternion.identity, transform).GetComponent<Enemy>();
+        enemy.Target = GetComponent<Target>();
         HasEnemy = true;
     }
 }

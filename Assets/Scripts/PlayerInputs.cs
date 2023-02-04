@@ -50,7 +50,7 @@ public class PlayerInputs : MonoBehaviour
     
     public void ChooseFlashlight1(InputAction.CallbackContext context)
     {
-        if(!context.performed)
+        if(!context.performed || !GameState.Singleton.IsPlaying)
             return;
 
         if (currentFlashlight == 0)
@@ -61,7 +61,7 @@ public class PlayerInputs : MonoBehaviour
     
     public void ChooseFlashlight2(InputAction.CallbackContext context)
     {
-        if(!context.performed)
+        if(!context.performed || !GameState.Singleton.IsPlaying)
             return;
         
         if (currentFlashlight == 1)
