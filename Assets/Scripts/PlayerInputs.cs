@@ -49,4 +49,12 @@ public class PlayerInputs : MonoBehaviour
             Flashlight.Singleton.RotateFlashlight(value.x, value.y);
         }
     }
+
+    public void ChangeFlashlightMode(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Flashlight.Singleton.ToggleMode();
+        }
+    }
 }
