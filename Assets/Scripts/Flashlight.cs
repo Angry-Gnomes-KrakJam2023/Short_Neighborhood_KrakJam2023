@@ -59,7 +59,6 @@ public class Flashlight : MonoBehaviour
         var enemies = FlashlightRaycaster.Singleton.TryRaycastEnemy();
         foreach (var enemy in enemies)
         {
-            Debug.Log(enemy.Health);
             enemy.Health--;
         }
     }
