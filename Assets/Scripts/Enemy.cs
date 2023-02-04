@@ -23,11 +23,11 @@ public class Enemy : Entity, IAttacking
         Idle();
         OnKill += () => {
             // TODO: Runaway animation
-            Destroy(gameObject, 0.3f);
+            DestroyMe(0.3f);
         };
         OnDeath += () => {
             // TODO: Proper death handling
-            Destroy(gameObject);
+            DestroyMe(0f);
         };
     }
 
@@ -48,5 +48,12 @@ public class Enemy : Entity, IAttacking
     public void Idle()
     {
         sr.sprite = IdleFrame;
+    }
+    public void DestroyMe(float time)
+    {
+        if(transform.parent != null)
+            Destroy(transform.parent.gameObject, time);
+        else
+            Destroy(gameObject, time);
     }
 }
