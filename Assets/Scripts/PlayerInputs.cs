@@ -9,10 +9,12 @@ public class PlayerInputs : MonoBehaviour
     private const float inputEpsilon = 0.5f;
     [SerializeField] private GameObject[] flashlights = new GameObject[2];
     [SerializeField] private PlayerSFX playerSFX;
+    private int currentFlashlight = 0;
+    private bool flashlightOn = false;
 
     public void RotateCamera(InputAction.CallbackContext context)
     {
-        if (!context.performed)
+        if(!context.performed)
             return;
         
         float value = context.ReadValue<float>();
@@ -21,32 +23,50 @@ public class PlayerInputs : MonoBehaviour
         else if (value <= -0.5f)
             Player.Singleton.RotateCamera(Player.Singleton.CurrentRotationIndex - 1);
     }
-    
-    public void ToggleFlashlight(InputAction.CallbackContext context)
-    {
-        if (!context.performed || !GameState.Singleton.IsPlaying)
-            return;
 
-        Flashlight.Singleton.Toggle();
+    private void SwitchFlashlight()
+    {
+        if (flashlightOn)
+        {
+            flashlights[currentFlashlight].SetActive(false);
+            playerSFX.PlayFlashlightOff();
+        }
+        else
+        {
+            flashlights[currentFlashlight].SetActive(true);
+            playerSFX.PlayFlashlightOn();
+        }
+
+        flashlightOn = !flashlightOn;
+    }
+
+    private void ChangeFlashlight(int number)
+    {
+        flashlights[currentFlashlight].SetActive(false);
+        currentFlashlight = number;
+        flashlights[currentFlashlight].SetActive(true);
+        playerSFX.PlayFlashlightOn();
     }
     
-    public void Focus(InputAction.CallbackContext context)
+    public void ChooseFlashlight1(InputAction.CallbackContext context)
     {
-        if (!GameState.Singleton.IsPlaying)
+        if(!context.performed || !GameState.Singleton.IsPlaying)
+            return;
+
+        if (currentFlashlight == 0)
+            SwitchFlashlight();
+        else
+            ChangeFlashlight(0);
+    }
+    
+    public void ChooseFlashlight2(InputAction.CallbackContext context)
+    {
+        if(!context.performed || !GameState.Singleton.IsPlaying)
             return;
         
-        if (context.started)
-            Flashlight.Singleton.Focus();
-        else if (context.canceled)
-            Flashlight.Singleton.Defocus();
-    }
-
-    public void MoveFlashlight(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            var value = context.ReadValue<Vector2>();
-            Flashlight.Singleton.RotateFlashlight(value.x, value.y);
-        }
+        if (currentFlashlight == 1)
+            SwitchFlashlight();
+        else
+            ChangeFlashlight(1);
     }
 }
