@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum LightTypes
+{
+    Normal = 0,
+    UV
+};
+
 public class Flashlight : MonoBehaviour
 {
     public float AngleMinX = -30f;
     public float AngleMaxX = 30;
     public float AngleMinY = -30f;
     public float AngleMaxY = 30f;
+    [SerializeField] private Color normalModeColor = Color.white;
+    [SerializeField] private Color uvModeColor = Color.blue;
 
     public static Flashlight Singleton { get; private set; }
 
@@ -32,6 +40,7 @@ public class Flashlight : MonoBehaviour
         }
     }
     public bool IsFlashing => gameObject.activeSelf;
+    public LightTypes Type { get; private set; } = LightTypes.Normal;
 
     private Light flashlight_light;
     private Vector3 angles = Vector3.zero;
@@ -56,10 +65,11 @@ public class Flashlight : MonoBehaviour
         if(!IsFocused || IsBlocked)
             return;
 
-        var enemies = FlashlightRaycaster.Singleton.TryRaycastEnemy();
-        foreach (var enemy in enemies)
+        IEnumerable<Entity> entities = FlashlightRaycaster.Singleton.TryRaycastEnemy();
+        foreach (var entity in entities)
         {
-            enemy.Health--;
+            if (((IFlashlightVulnerable)entity).VulnerableType == Type)
+                entity.Health--;
         }
     }
 
@@ -103,11 +113,31 @@ public class Flashlight : MonoBehaviour
 
     public void Toggle()
     {
-        if(IsBlocked)
+        if (IsBlocked)
             return;
 
         if (!gameObject.activeSelf)
             ResetRotation();
         gameObject.SetActive(!gameObject.activeSelf);
+    }
+
+    public void ToggleMode()
+    {
+        if (IsBlocked)
+            return;
+
+        switch (Type)
+        {
+            case LightTypes.Normal:
+                Type = LightTypes.UV;
+                flashlight_light.color = uvModeColor;
+                break;
+            case LightTypes.UV:
+                Type = LightTypes.Normal;
+                flashlight_light.color = normalModeColor;
+                break;
+            default:
+                break;
+        }
     }
 }

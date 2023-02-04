@@ -8274,6 +8274,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 53b0c953-acda-4a0c-80cf-0162b9671d35
     m_ActionName: Player/MoveFlashlight[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 90525001472134020}
+        m_TargetAssemblyTypeName: PlayerInputs, Assembly-CSharp
+        m_MethodName: ChangeFlashlightMode
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f63089db-127d-4ce3-9168-0e636be4a0e8
+    m_ActionName: Player/ChangeFlashlightMode[/Keyboard/c]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -22356,7 +22372,7 @@ MonoBehaviour:
   - 0
   - 90
   DefaultAngleIndex: 1
-  RotationSpeed: 8
+  RotationSpeed: 10
 --- !u!1 &5210347715999640273
 GameObject:
   m_ObjectHideFlags: 0
@@ -23400,6 +23416,8 @@ MonoBehaviour:
   AngleMaxX: 20
   AngleMinY: -30
   AngleMaxY: 30
+  normalModeColor: {r: 1, g: 1, b: 1, a: 1}
+  uvModeColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &5968315550248190513
 GameObject:
   m_ObjectHideFlags: 0
