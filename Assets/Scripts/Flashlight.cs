@@ -65,7 +65,7 @@ public class Flashlight : MonoBehaviour
 
     public void Focus()
     {
-        if (IsFocused || IsBlocked)
+        if (IsFocused || IsBlocked || !IsFlashing)
             return;
 
         IsFocused = true;
@@ -75,7 +75,7 @@ public class Flashlight : MonoBehaviour
 
     public void Defocus()
     {
-        if (!IsFocused || IsBlocked)
+        if (!IsFocused || IsBlocked || !IsFlashing)
             return;
 
         IsFocused = false;
