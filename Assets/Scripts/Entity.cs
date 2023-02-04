@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    private int health;
+    [SerializeField] private int health;
 
     public Action OnDeath { get; set; }
     public Action OnHit { get; set; }
