@@ -8,6 +8,7 @@ public class PlayerInputs : MonoBehaviour
 {
     private const float inputEpsilon = 0.5f;
     [SerializeField] private GameObject[] flashlights = new GameObject[2];
+    [SerializeField] private PlayerSFX playerSFX;
     private int currentFlashlight = 0;
     private bool flashlightOn = false;
 
@@ -26,9 +27,16 @@ public class PlayerInputs : MonoBehaviour
     private void SwitchFlashlight()
     {
         if (flashlightOn)
+        {
             flashlights[currentFlashlight].SetActive(false);
+            playerSFX.PlayFlashlightOff();
+        }
         else
+        {
             flashlights[currentFlashlight].SetActive(true);
+            playerSFX.PlayFlashlightOn();
+        }
+
         flashlightOn = !flashlightOn;
     }
 
@@ -37,6 +45,7 @@ public class PlayerInputs : MonoBehaviour
         flashlights[currentFlashlight].SetActive(false);
         currentFlashlight = number;
         flashlights[currentFlashlight].SetActive(true);
+        playerSFX.PlayFlashlightOn();
     }
     
     public void ChooseFlashlight1(InputAction.CallbackContext context)
