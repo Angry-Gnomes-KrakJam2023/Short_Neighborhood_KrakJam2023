@@ -7,15 +7,18 @@ public class GameLivesIndicator : MonoBehaviour
 {
     public static GameLivesIndicator Singleton;
 
-    [SerializeField] private TMP_Text text;
+    [SerializeField] private GameObject heartPrefab;
 
     public GameLivesIndicator()
     {
         Singleton = this;
     }
 
-    public void SetText(string text)
+    public void SetLives(int amount)
     {
-        this.text.text = text;
+        for(int i = 0; i < transform.childCount; i++)
+            Destroy(transform.GetChild(i).gameObject);
+        for(int i = 0; i < amount; i++)
+            Instantiate(heartPrefab, transform);
     }
 }

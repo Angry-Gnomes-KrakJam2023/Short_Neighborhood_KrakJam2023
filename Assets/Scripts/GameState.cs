@@ -24,7 +24,7 @@ public class GameState : MonoBehaviour
         set
         {
             lives = value;
-            GameLivesIndicator.Singleton.SetText(lives.ToString("N0"));
+            GameLivesIndicator.Singleton.SetLives(lives);
             if (lives <= 0)
                 OnPlayerDeath?.Invoke();
         }
