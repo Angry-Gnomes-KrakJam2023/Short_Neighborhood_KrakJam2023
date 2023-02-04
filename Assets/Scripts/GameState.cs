@@ -43,6 +43,9 @@ public class GameState : MonoBehaviour
         OnPlayerDeath += () => {
             Interface.Singleton.ShowGameOverScreen();
             StopGame();
+            Flashlight.Singleton.IsBlocked = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         };
     }
 
