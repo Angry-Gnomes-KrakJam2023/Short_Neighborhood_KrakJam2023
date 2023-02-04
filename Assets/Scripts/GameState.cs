@@ -36,6 +36,9 @@ public class GameState : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         Singleton = this;
         OnPlayerDeath += () => {
             Interface.Singleton.ShowGameOverScreen();

@@ -47,7 +47,8 @@ public class PlayerInputs : MonoBehaviour
     {
         if (context.performed)
         {
-            
+            var value = context.ReadValue<Vector2>();
+            Flashlight.Singleton.RotateFlashlight(value.x, value.y);
         }
     }
 }
