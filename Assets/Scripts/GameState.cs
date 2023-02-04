@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,8 +25,11 @@ public class GameState : MonoBehaviour
         {
             lives = value;
             GameLivesIndicator.Singleton.SetText(lives.ToString("N0"));
+            if (lives <= 0)
+                OnPlayerDeath?.Invoke();
         }
     }
+    public Action OnPlayerDeath { get; set; }
 
     private float gameTime;
     private int lives;
@@ -33,6 +37,10 @@ public class GameState : MonoBehaviour
     private void Awake()
     {
         Singleton = this;
+        OnPlayerDeath += () => {
+            Interface.Singleton.ShowGameOverScreen();
+            StopGame();
+        };
     }
 
     private void Start()
@@ -53,5 +61,12 @@ public class GameState : MonoBehaviour
         IsPlaying = true;
         Interface.Singleton.ShowTextIndicator();
         Interface.Singleton.ShowLivesIndicator();
+    }
+
+    public void StopGame()
+    {
+        Interface.Singleton.HideLivesIndicator();
+        Interface.Singleton.HideTextIndicator();
+        IsPlaying = false;
     }
 }
