@@ -2,27 +2,79 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-public class Enemy : Entity, IMovable
+public class Enemy : Entity, IAttacking
 {
-    public float MoveSpeed { get; set; }
+    [Header("Enemy Properties")]
+    public int Damage = 1;
+    [Header("Sprites")]
+    public Sprite IdleFrame;
+    public Sprite PrepareFrame;
+    public Sprite AttackFrame;
+    [Header("Attack timings")]
+    public float IdleTime = 2f;
+    public float PrepareTime = 4f;
+    public float AttackTime = 1f;
+    private enum TimeSpace
+    {
+        Idle,
+        Prepare,
+        Attack
+    }
 
-    private Vector3 targetPosition = Vector3.zero;
-    private Rigidbody rb;
+    public Target Target { get; set; }
+
+    private SpriteRenderer sr;
+    private float timer;
+    private TimeSpace timeSpace;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        timeSpace = TimeSpace.Idle;
+        timer = IdleTime;
+        sr = GetComponent<SpriteRenderer>();
+        Idle();
     }
 
     private void FixedUpdate()
     {
-        if (rb.position != targetPosition)
-            rb.position = Vector3.MoveTowards(rb.position, targetPosition, MoveSpeed);
+        timer -= Time.fixedDeltaTime;
+        if (timer <= 0f)
+        {
+            switch (timeSpace)
+            {
+                case TimeSpace.Idle:
+                    timeSpace = TimeSpace.Prepare;
+                    PrepareAttack();
+                    timer = PrepareTime;
+                    break;
+                case TimeSpace.Prepare:
+                    timeSpace = TimeSpace.Attack;
+                    Attack();
+                    timer = AttackTime;
+                    break;
+                case TimeSpace.Attack:
+                    timeSpace = TimeSpace.Idle;
+                    Idle();
+                    timer = IdleTime;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
-    public void Move(Vector3 pos)
+    public void Attack()
     {
-        targetPosition = pos;
+        if(Target != null)
+            Target.Health -= Damage;
+        sr.sprite = AttackFrame;
+    }
+    public void PrepareAttack()
+    {
+        sr.sprite = PrepareFrame;
+    }
+    public void Idle()
+    {
+        sr.sprite = IdleFrame;
     }
 }
