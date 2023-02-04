@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Entity, IAttacking
+public class Enemy : Entity, IAttacking, IFlashlightVulnerable
 {
     [Header("Enemy Properties")]
     public int Damage = 1;
@@ -14,6 +14,7 @@ public class Enemy : Entity, IAttacking
 
     public Target Target { get; set; }
     public Action OnKill { get; set; }
+    public LightTypes VulnerableType { get; set; } = LightTypes.Normal;
 
     private SpriteRenderer sr;
     private ParticleSystem dissapearParticles;
