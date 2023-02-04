@@ -6,6 +6,7 @@ public class Interface : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject textIndicator;
+    [SerializeField] private GameObject livesIndicator;
 
     public static Interface Singleton { get; private set; }
     
@@ -31,5 +32,14 @@ public class Interface : MonoBehaviour
     {
         textIndicator.SetActive(false);
     }
-    
+
+    public void ShowLivesIndicator()
+    {
+        livesIndicator.SetActive(true);
+    }
+
+    public void HideLivesIndicator()
+    {
+        livesIndicator.SetActive(false);
+    }
 }

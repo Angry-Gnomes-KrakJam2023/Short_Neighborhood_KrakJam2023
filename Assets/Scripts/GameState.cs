@@ -17,12 +17,26 @@ public class GameState : MonoBehaviour
         }
     }
     public bool IsPlaying { get; private set; }
+    public int Lives
+    {
+        get => lives;
+        set
+        {
+            lives = value;
+            GameLivesIndicator.Singleton.SetText(lives.ToString("N0"));
+        }
+    }
 
-    [SerializeField] private float gameTime;
+    private float gameTime;
+    private int lives;
 
     private void Awake()
     {
         Singleton = this;
+    }
+
+    private void Start()
+    {
         StartGame();
     }
 
@@ -35,7 +49,9 @@ public class GameState : MonoBehaviour
     public void StartGame()
     {
         GameTime = 0f;
+        Lives = 3;
         IsPlaying = true;
         Interface.Singleton.ShowTextIndicator();
+        Interface.Singleton.ShowLivesIndicator();
     }
 }
