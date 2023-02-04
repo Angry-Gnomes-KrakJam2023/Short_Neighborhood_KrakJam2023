@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 401794d3e44a5a8448d9265e6d20294e
+guid: 5af2ca4a55434c2408dd2ffdcdd027cd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,10 +45,10 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0}
-  spritePixelsToUnits: 800
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 316, y: 288, z: 1171, w: 632}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -105,22 +105,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gnom1_0_0
+      name: root1_0
       rect:
         serializedVersion: 2
-        x: 141
-        y: 177
-        width: 730
-        height: 858
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 330
+        y: 300
+        width: 594
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34f790e0c38e89b45b3196efc4aca8af
-      internalID: -1251082898
+      spriteID: 3d81d2c2473e2cd4f8bb4437ab8ef2a8
+      internalID: 603226610
       vertices: []
       indices: 
       edges: []
@@ -136,7 +136,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gnom1_0_0: -1251082898
+      root1_0: 603226610
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

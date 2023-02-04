@@ -8,8 +8,12 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject enemyToSpawn;
     [SerializeField] private Transform enemySpawnerLocation;
 
+    public bool HasEnemy { get; private set; }
+
     public void Spawn()
     {
+        if(HasEnemy) return;
+
         if (!enemyToSpawn)
         {
             Debug.LogWarning(name + " - There is no enemy attached to this spawner!");
@@ -23,5 +27,6 @@ public class Spawner : MonoBehaviour
         }
 
         Instantiate(enemyToSpawn, enemySpawnerLocation.position, Quaternion.identity, transform);
+        HasEnemy = true;
     }
 }
