@@ -14,7 +14,7 @@ public class PlayerInputs : MonoBehaviour
 
     public void RotateCamera(InputAction.CallbackContext context)
     {
-        if(!context.performed)
+        if (!context.performed)
             return;
         
         float value = context.ReadValue<float>();
@@ -23,50 +23,31 @@ public class PlayerInputs : MonoBehaviour
         else if (value <= -0.5f)
             Player.Singleton.RotateCamera(Player.Singleton.CurrentRotationIndex - 1);
     }
-
-    private void SwitchFlashlight()
-    {
-        if (flashlightOn)
-        {
-            flashlights[currentFlashlight].SetActive(false);
-            playerSFX.PlayFlashlightOff();
-        }
-        else
-        {
-            flashlights[currentFlashlight].SetActive(true);
-            playerSFX.PlayFlashlightOn();
-        }
-
-        flashlightOn = !flashlightOn;
-    }
-
-    private void ChangeFlashlight(int number)
-    {
-        flashlights[currentFlashlight].SetActive(false);
-        currentFlashlight = number;
-        flashlights[currentFlashlight].SetActive(true);
-        playerSFX.PlayFlashlightOn();
-    }
     
-    public void ChooseFlashlight1(InputAction.CallbackContext context)
+    public void ToggleFlashlight(InputAction.CallbackContext context)
     {
-        if(!context.performed || !GameState.Singleton.IsPlaying)
+        if (!context.performed || !GameState.Singleton.IsPlaying)
             return;
 
-        if (currentFlashlight == 0)
-            SwitchFlashlight();
-        else
-            ChangeFlashlight(0);
+        Flashlight.Singleton.gameObject.SetActive(!Flashlight.Singleton.gameObject.activeSelf);
     }
     
-    public void ChooseFlashlight2(InputAction.CallbackContext context)
+    public void Focus(InputAction.CallbackContext context)
     {
-        if(!context.performed || !GameState.Singleton.IsPlaying)
+        if (!GameState.Singleton.IsPlaying)
             return;
         
-        if (currentFlashlight == 1)
-            SwitchFlashlight();
-        else
-            ChangeFlashlight(1);
+        if (context.started)
+            Flashlight.Singleton.Focus();
+        else if (context.canceled)
+            Flashlight.Singleton.Defocus();
+    }
+
+    public void MoveFlashlight(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            
+        }
     }
 }

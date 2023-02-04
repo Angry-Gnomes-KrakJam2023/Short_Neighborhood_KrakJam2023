@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Flashlight1",
+                    "name": "Flashlight",
                     "type": "Button",
                     "id": "f9e5f8b2-9f85-4483-ad7e-f5c9dbe702a1",
                     "expectedControlType": "Button",
@@ -24,13 +24,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Flashlight2",
+                    "name": "Focus",
                     "type": "Button",
                     "id": "232e8b59-8cff-46e2-9db9-fc000e16eaff",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MoveFlashlight",
+                    "type": "Value",
+                    "id": "53b0c953-acda-4a0c-80cf-0162b9671d35",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -107,7 +116,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Flashlight1",
+                    "action": "Flashlight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -118,7 +127,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Flashlight2",
+                    "action": "Focus",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b902dadf-2a43-46f3-86db-a2c9c42db6de",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveFlashlight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
