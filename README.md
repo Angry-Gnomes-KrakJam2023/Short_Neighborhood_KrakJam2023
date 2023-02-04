@@ -9,3 +9,4 @@
 - [ ] Korzeń (animacje, stan zdrowia)
 - [X] Ekran menu (placeholder)
 - [X] Ekran porażki (placeholder)
+- [X] System spawnowania przeciwników
