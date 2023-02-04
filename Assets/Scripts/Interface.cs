@@ -5,7 +5,9 @@ using UnityEngine;
 public class Interface : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverPanel;
-    public static Interface Singleton {get; private set;}
+    [SerializeField] private GameObject textIndicator;
+
+    public static Interface Singleton { get; private set; }
     
     void Awake()
     {
@@ -19,4 +21,15 @@ public class Interface : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
     }
+
+    public void ShowTextIndicator()
+    {
+        textIndicator.SetActive(true);
+    }
+
+    public void HideTextIndicator()
+    {
+        textIndicator.SetActive(false);
+    }
+    
 }
