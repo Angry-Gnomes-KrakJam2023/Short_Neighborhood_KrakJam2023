@@ -26432,7 +26432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f295bd5f5abc04d99a37acbec469d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToSpawn: {fileID: 7027419315201693857, guid: 985ecfef93bf0274fb0df246e94dea14,
+  enemyToSpawn: {fileID: 7961038819193751606, guid: 7f670a5b8337d3549a6c480cae58f69a,
     type: 3}
   enemySpawnerLocation: {fileID: 6868046525438096682}
 --- !u!114 &7586270610529416864
@@ -26447,7 +26447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f295bd5f5abc04d99a37acbec469d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToSpawn: {fileID: 7027419315201693857, guid: 985ecfef93bf0274fb0df246e94dea14,
+  enemyToSpawn: {fileID: 7961038819193751606, guid: 7f670a5b8337d3549a6c480cae58f69a,
     type: 3}
   enemySpawnerLocation: {fileID: 6868046525336065471}
 --- !u!114 &7586270610742515626
@@ -26462,7 +26462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f295bd5f5abc04d99a37acbec469d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToSpawn: {fileID: 7027419315201693857, guid: 985ecfef93bf0274fb0df246e94dea14,
+  enemyToSpawn: {fileID: 7961038819193751606, guid: 7f670a5b8337d3549a6c480cae58f69a,
     type: 3}
   enemySpawnerLocation: {fileID: 6868046525652497589}
 --- !u!114 &7586270611020126687
@@ -26477,7 +26477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f295bd5f5abc04d99a37acbec469d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToSpawn: {fileID: 7027419315201693857, guid: 985ecfef93bf0274fb0df246e94dea14,
+  enemyToSpawn: {fileID: 7961038819193751606, guid: 7f670a5b8337d3549a6c480cae58f69a,
     type: 3}
   enemySpawnerLocation: {fileID: 6868046525927488192}
 --- !u!4 &7722960418457012196
