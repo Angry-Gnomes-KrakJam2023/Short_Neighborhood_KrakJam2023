@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7027419315201693857}
-  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.6934441, y: 0.84, z: 6.2379074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 401794d3e44a5a8448d9265e6d20294e, type: 3}
+  m_Sprite: {fileID: -1251082898, guid: 401794d3e44a5a8448d9265e6d20294e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9.46, y: 11.57}
+  m_Size: {x: 0.9125, y: 1.0725}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -115,9 +115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 1
-  IdleFrame: {fileID: 0}
-  PrepareFrame: {fileID: 0}
-  AttackFrame: {fileID: 0}
+  IdleFrame: {fileID: -1251082898, guid: 401794d3e44a5a8448d9265e6d20294e, type: 3}
+  PrepareFrame: {fileID: -1776266890, guid: 506e204cdff4db945a33403570390f1f, type: 3}
+  AttackFrame: {fileID: 436064131, guid: 189f9eff0d17de84e8bf71952b9dd97d, type: 3}
   IdleTime: 2
   PrepareTime: 4
   AttackTime: 1

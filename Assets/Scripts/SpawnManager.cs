@@ -7,9 +7,10 @@ using Random = UnityEngine.Random;
 public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager Singleton {get; private set;}
-    [SerializeField] private List<Spawner> spawners = new();
     private bool isSpawning = true;
-    private float timeToSpawn = 10f;
+    [SerializeField] private float timeToSpawn = 10f;
+
+    private List<Spawner> spawners = new();
 
     private void Awake()
     {
@@ -17,6 +18,9 @@ public class SpawnManager : MonoBehaviour
             Singleton = this;
         else
             Destroy(gameObject);
+
+        spawners.AddRange(FindObjectsOfType<Spawner>());
+
         StartCoroutine(SpawnCoroutine());
     }
 
