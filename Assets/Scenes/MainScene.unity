@@ -7502,7 +7502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f738d23d83f54642b7e6679a33ee44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomID: 0
+  roomID: 1
   distractorToSpawn: {fileID: 5221392378900236488, guid: c6609c89c1266214ba16124603be758a,
     type: 3}
 --- !u!4 &749290025871459767
@@ -8667,9 +8667,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5792078342128966745}
+  - component: {fileID: 5966384703703841785}
   - component: {fileID: 4824627525379672217}
   - component: {fileID: 2606119996182313499}
-  - component: {fileID: 5966384703703841785}
   - component: {fileID: 7320793583106691197}
   m_Layer: 0
   m_Name: FlashLight

@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Distractor : Entity, IMovable
+public class Distractor : Entity, IMovable, IFlashlightVulnerable
 {
     [SerializeField] private float moveSpeed;
 
     public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
+    LightTypes IFlashlightVulnerable.VulnerableType { get; set; } = LightTypes.UV;
 
     private SpriteRenderer sr;
     private ParticleSystem dissapearParticles;
@@ -22,6 +23,8 @@ public class Distractor : Entity, IMovable
             dissapearParticles.Play();
             //StartCoroutine(throwDissapearParticles(0f));
             DestroyMe(0f);
+        };
+        OnHit += () => {
         };
 
         Move(Player.Singleton.transform.position + Player.Singleton.transform.forward * 0.4f);

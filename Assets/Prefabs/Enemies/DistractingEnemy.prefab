@@ -4961,7 +4961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d911169b9e572404491de7d649c5399f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10000
+  health: 40
   moveSpeed: 0.5
 --- !u!65 &8152616532602547947
 BoxCollider:
@@ -4974,8 +4974,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2958517, y: 0.9308224, z: 0.2}
-  m_Center: {x: -0.0037019253, y: 0.4654112, z: 0}
+  m_Size: {x: 1.2958517, y: 0.8678438, z: 0.2}
+  m_Center: {x: -0.0037019253, y: -0.0004697144, z: 0}
 --- !u!95 &709921705827861375
 Animator:
   serializedVersion: 5
