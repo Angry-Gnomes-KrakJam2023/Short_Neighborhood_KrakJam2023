@@ -11,7 +11,7 @@ public class SpawnManager : MonoBehaviour
     private bool isSpawning = true;
     [SerializeField] private float timeToSpawn = 10f;
 
-    private List<Spawner> spawners = new ();
+    private List<ISpawner> spawners = new ();
 
     private void Awake()
     {
@@ -20,7 +20,8 @@ public class SpawnManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        spawners.AddRange(FindObjectsOfType<Spawner>());
+        spawners.AddRange((ISpawner[])FindObjectsOfType<EnemySpawner>());
+        spawners.AddRange((ISpawner[])FindObjectsOfType<DistractorSpawner>());
 
         StartCoroutine(SpawnCoroutine());
     }
@@ -36,7 +37,7 @@ public class SpawnManager : MonoBehaviour
         while (isSpawning)
         {
             yield return new WaitForSeconds(timeToSpawn);
-            IEnumerable<Spawner> properSpawner = from spawner in spawners where !spawner.HasEnemy &&
+            IEnumerable<ISpawner> properSpawner = from spawner in spawners where !spawner.HasEnemy &&
                 spawner.RoomID != Player.Singleton.RoomID select spawner;
             int count = properSpawner.ToList().Count;
             if(count <= 0)

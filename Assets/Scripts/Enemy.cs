@@ -58,13 +58,6 @@ public class Enemy : Entity, IAttacking, IFlashlightVulnerable
     {
         sr.sprite = IdleFrame;
     }
-    public void DestroyMe(float time)
-    {
-        if(transform.parent != null)
-            Destroy(transform.parent.gameObject, time);
-        else
-            Destroy(gameObject, time);
-    }
 
     IEnumerator throwDissapearParticles(float delay)
     {

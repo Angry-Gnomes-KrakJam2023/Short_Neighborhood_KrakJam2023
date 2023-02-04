@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour, ISpawner
 {
-    public int RoomID;
-
+    [SerializeField] private int roomID;
     [SerializeField] private GameObject enemyToSpawn;
     [SerializeField] private Transform enemySpawnerLocation;
 
-    public bool HasEnemy { get; private set; }
+    public bool HasEnemy { get; set; }
+    public int RoomID { get => roomID; set => roomID = value; }
 
     public void Spawn()
     {

@@ -60,12 +60,17 @@ public class Flashlight : MonoBehaviour
         flashlight_light = GetComponent<Light>();
     }
 
+    private void Start()
+    {
+        flashlight_light.color = normalModeColor;
+    }
+
     private void FixedUpdate()
     {
         if(!IsFocused || IsBlocked)
             return;
 
-        IEnumerable<Entity> entities = FlashlightRaycaster.Singleton.TryRaycastEnemy();
+        IEnumerable<Entity> entities = FlashlightRaycaster.Singleton.TryRaycastEnemyOrDistractor();
         foreach (var entity in entities)
         {
             if (((IFlashlightVulnerable)entity).VulnerableType == Type)
