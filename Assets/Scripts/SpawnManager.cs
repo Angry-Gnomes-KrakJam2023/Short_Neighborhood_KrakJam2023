@@ -36,14 +36,15 @@ public class SpawnManager : MonoBehaviour
         while (isSpawning)
         {
             yield return new WaitForSeconds(timeToSpawn);
-            IEnumerable<Spawner> emptySpawner = from spawner in spawners where !spawner.HasEnemy select spawner;
-            int count = emptySpawner.ToList().Count;
+            IEnumerable<Spawner> properSpawner = from spawner in spawners where !spawner.HasEnemy &&
+                spawner.RoomID != Player.Singleton.RoomID select spawner;
+            int count = properSpawner.ToList().Count;
             if(count <= 0)
-                yield break;
+                continue;
 
             int randomSpawner = Random.Range(0, count);
             // TODO check if room is lit
-            emptySpawner.ToList()[randomSpawner].Spawn();
+            properSpawner.ToList()[randomSpawner].Spawn();
         }
     }
 }

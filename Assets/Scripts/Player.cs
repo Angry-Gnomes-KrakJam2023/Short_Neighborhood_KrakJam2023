@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public static Player Singleton { get; private set; }
 
     public int CurrentRotationIndex { get; private set; }
+    public int RoomID => CurrentRotationIndex;
 
     private Quaternion targetRotation;
     private const float epsilon = 0.5f;

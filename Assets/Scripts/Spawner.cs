@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public int RoomID;
+
     [SerializeField] private GameObject enemyToSpawn;
     [SerializeField] private Transform enemySpawnerLocation;
 
