@@ -10,3 +10,7 @@
 - [X] Ekran menu (placeholder)
 - [X] Ekran porażki (placeholder)
 - [X] System spawnowania przeciwników
+
+## Credits
+
+- [freesound.org](https://freesound.org/)

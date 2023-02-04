@@ -130,6 +130,8 @@ GameObject:
   - component: {fileID: 7044264014804063108}
   - component: {fileID: 2818080614794030813}
   - component: {fileID: 3005462328741779879}
+  - component: {fileID: 4651867857051578620}
+  - component: {fileID: 4604568433174295581}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -188,6 +190,7 @@ MonoBehaviour:
   flashlights:
   - {fileID: 3819964279348885801}
   - {fileID: 7379835301826892255}
+  playerSFX: {fileID: 4604568433174295581}
 --- !u!114 &3005462328741779879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +270,118 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!82 &4651867857051578620
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791667377979523661}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6673405196342856745, guid: 8d6e109d6c0fb8f4898f4128aac6db2c,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &4604568433174295581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791667377979523661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcd278c320527194c8102e7bfac2bfaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 4651867857051578620}
+  flashlightOn: {fileID: 8300000, guid: 8b68616b47aa72e4faea65b803b1d180, type: 3}
+  flashlightOff: {fileID: 8300000, guid: dfb974d0a2b14284da4657281d3b2334, type: 3}
 --- !u!1 &3819964279348885801
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8519633954342123776
 Transform:
   m_ObjectHideFlags: 0
@@ -311,11 +426,11 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.9437517, b: 0.7783019, a: 1}
-  m_Intensity: 4
-  m_Range: 10
-  m_SpotAngle: 66.44217
-  m_InnerSpotAngle: 56.48547
+  m_Color: {r: 0.9716981, g: 0.9340143, b: 0.30709326, a: 1}
+  m_Intensity: 11.67
+  m_Range: 11.13
+  m_SpotAngle: 58.47776
+  m_InnerSpotAngle: 27.68098
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
