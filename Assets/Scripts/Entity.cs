@@ -22,4 +22,12 @@ public class Entity : MonoBehaviour
             health = value;
         }
     }
+
+    public void DestroyMe(float time)
+    {
+        if(transform.parent != null)
+            Destroy(transform.parent.gameObject, time);
+        else
+            Destroy(gameObject, time);
+    }
 }
