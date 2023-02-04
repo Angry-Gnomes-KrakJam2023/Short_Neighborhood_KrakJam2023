@@ -3577,6 +3577,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3819964279348885801, guid: af7d13e552804ec4baaeb9fdcb469110,
+        type: 3}
+      propertyPath: m_Name
+      value: FlashLight
+      objectReference: {fileID: 0}
     - target: {fileID: 8519633954342123776, guid: af7d13e552804ec4baaeb9fdcb469110,
         type: 3}
       propertyPath: m_LocalRotation.w

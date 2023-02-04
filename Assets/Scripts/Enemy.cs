@@ -35,7 +35,7 @@ public class Enemy : Entity, IAttacking
         Idle();
         OnDeath += () => {
             // TODO: Proper death handling
-            Destroy(gameObject, 1f);
+            Destroy(gameObject);
         };
     }
 
