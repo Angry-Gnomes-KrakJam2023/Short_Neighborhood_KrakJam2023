@@ -218,7 +218,7 @@ MonoBehaviour:
   - 0
   - 90
   DefaultAngleIndex: 1
-  RotationSpeed: 3.5
+  RotationSpeed: 8
 --- !u!114 &2818080614794030813
 MonoBehaviour:
   m_ObjectHideFlags: 0
