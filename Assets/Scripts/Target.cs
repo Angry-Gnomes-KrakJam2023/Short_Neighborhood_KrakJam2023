@@ -7,8 +7,14 @@ public class Target : Entity
     private void Awake()
     {
         OnDeath += () => {
-            Destroy(gameObject, 1f);
-            GameState.Singleton.Lives--;
+            StartCoroutine(DestroyAfterDelay());
         }; // TODO: Improve death (animation etc.)
+    }
+
+    IEnumerator DestroyAfterDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+        GameState.Singleton.Lives--;
     }
 }

@@ -41,6 +41,9 @@ public class Enemy : Entity, IAttacking
 
     private void FixedUpdate()
     {
+        if (!GameState.Singleton.IsPlaying)
+            return;
+        
         timer -= Time.fixedDeltaTime;
         if (timer <= 0f)
         {
