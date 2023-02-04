@@ -23,7 +23,7 @@ public class Menu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene(mainSceneNumber);
+        AsyncSceneLoader.Singleton.LoadScene(mainSceneNumber);
     }
 
     public void Quit()
