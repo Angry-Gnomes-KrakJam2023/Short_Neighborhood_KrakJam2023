@@ -13,7 +13,7 @@ public class Target : Entity
 
     IEnumerator DestroyAfterDelay()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
         Destroy(gameObject);
         GameState.Singleton.Lives--;
     }

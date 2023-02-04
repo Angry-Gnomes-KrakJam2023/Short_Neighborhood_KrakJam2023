@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
             return;
         }
 
-        Enemy enemy = Instantiate(enemyToSpawn, enemySpawnerLocation.position, Quaternion.identity, transform).GetComponent<Enemy>();
+        Enemy enemy = Instantiate(enemyToSpawn, enemySpawnerLocation.position, Quaternion.identity).GetComponentInChildren<Enemy>();
         enemy.Target = GetComponent<Target>();
         enemy.OnDeath += () => HasEnemy = false;
         HasEnemy = true;
