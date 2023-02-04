@@ -14,7 +14,7 @@ public class GameState : MonoBehaviour
         {
             gameTime = value;
             if (GameTimeIndicator.Singleton != null)
-                GameTimeIndicator.Singleton.SetText(((int)gameTime / 60).ToString("N0") + ":" + ((int)gameTime % 60).ToString("N0"));
+                GameTimeIndicator.Singleton.SetText(((int)gameTime / 60).ToString("D2") + ":" + ((int)gameTime % 60).ToString("D2"));
         }
     }
     public bool IsPlaying { get; private set; }
