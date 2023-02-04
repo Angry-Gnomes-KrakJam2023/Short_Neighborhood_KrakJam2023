@@ -7,8 +7,8 @@ public class Entity : MonoBehaviour
 {
     private int health;
 
-    public Action OnDeath { get; }
-    public Action OnHit { get; }
+    public Action OnDeath { get; set; }
+    public Action OnHit { get; set; }
     public int Health
     {
         get => health;

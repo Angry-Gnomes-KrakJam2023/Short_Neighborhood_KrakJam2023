@@ -33,10 +33,17 @@ public class Enemy : Entity, IAttacking
         timer = IdleTime;
         sr = GetComponent<SpriteRenderer>();
         Idle();
+        OnDeath += () => {
+            // TODO: Proper death handling
+            Destroy(gameObject, 1f);
+        };
     }
 
     private void FixedUpdate()
     {
+        if (!GameState.Singleton.IsPlaying)
+            return;
+        
         timer -= Time.fixedDeltaTime;
         if (timer <= 0f)
         {
