@@ -65,10 +65,11 @@ public class Flashlight : MonoBehaviour
         if(!IsFocused || IsBlocked)
             return;
 
-        var enemies = FlashlightRaycaster.Singleton.TryRaycastEnemy();
-        foreach (var enemy in enemies)
+        IEnumerable<Entity> entities = FlashlightRaycaster.Singleton.TryRaycastEnemy();
+        foreach (var entity in entities)
         {
-            enemy.Health--;
+            if (((IFlashlightVulnerable)entity).VulnerableType == Type)
+                entity.Health--;
         }
     }
 
