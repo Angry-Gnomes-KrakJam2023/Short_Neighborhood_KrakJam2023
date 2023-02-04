@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
     public static SpawnManager Singleton {get; private set;}
     [SerializeField] private List<Spawner> spawners = new();
     private bool isSpawning = true;
-    private float timeToSpawn = 10f;
+    [SerializeField] private float timeToSpawn = 10f;
 
     private void Awake()
     {
