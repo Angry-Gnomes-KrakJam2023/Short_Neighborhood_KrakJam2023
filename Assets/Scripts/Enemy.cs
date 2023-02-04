@@ -16,17 +16,25 @@ public class Enemy : Entity, IAttacking
     public Action OnKill { get; set; }
 
     private SpriteRenderer sr;
+    private ParticleSystem dissapearParticles;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        dissapearParticles = transform.parent.GetComponentInChildren<ParticleSystem>();
         Idle();
         OnKill += () => {
             // TODO: Runaway animation
+            dissapearParticles.transform.parent = null;
+            dissapearParticles.Play();
+            //StartCoroutine(throwDissapearParticles(0.3f));
             DestroyMe(0.3f);
         };
         OnDeath += () => {
             // TODO: Proper death handling
+            dissapearParticles.transform.parent = null;
+            dissapearParticles.Play();
+            //StartCoroutine(throwDissapearParticles(0f));
             DestroyMe(0f);
         };
     }
@@ -55,5 +63,11 @@ public class Enemy : Entity, IAttacking
             Destroy(transform.parent.gameObject, time);
         else
             Destroy(gameObject, time);
+    }
+
+    IEnumerator throwDissapearParticles(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        dissapearParticles.Play();
     }
 }
