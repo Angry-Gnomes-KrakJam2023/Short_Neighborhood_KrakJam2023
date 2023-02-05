@@ -8,6 +8,7 @@ public class Interface : MonoBehaviour
     [SerializeField] private GameObject textIndicator;
     [SerializeField] private GameObject livesIndicator;
     [SerializeField] private Panel pausePanel;
+    [SerializeField] private AudioSource gameOverSource;
 
     public static Interface Singleton { get; private set; }
     
@@ -22,6 +23,7 @@ public class Interface : MonoBehaviour
     public void ShowGameOverScreen()
     {
         gameOverPanel.SetActive(true);
+        gameOverSource.Play();
     }
 
     public void ShowTextIndicator()
