@@ -9,7 +9,6 @@ public class SceneLoader : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("Clicked");
         AsyncSceneLoader.Singleton.LoadScene(sceneIndex);
     }
 }
