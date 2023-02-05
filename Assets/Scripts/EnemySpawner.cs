@@ -28,7 +28,9 @@ public class EnemySpawner : MonoBehaviour, ISpawner
             return;
         }
 
-        Enemy enemy = Instantiate(enemyToSpawn, enemySpawnerLocation.position, Quaternion.identity).GetComponentInChildren<Enemy>();
+        Quaternion rotation = RoomID == 0 ? Quaternion.Euler(0f, -90f, 0f) : (RoomID == 1 ? Quaternion.identity : Quaternion.Euler(0f, 90f, 0f));
+
+        Enemy enemy = Instantiate(enemyToSpawn, enemySpawnerLocation.position, rotation).GetComponentInChildren<Enemy>();
         enemy.Target = GetComponent<Target>();
         enemy.OnDeath += () => HasEnemy = false;
         HasEnemy = true;
