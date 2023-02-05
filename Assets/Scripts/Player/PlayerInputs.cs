@@ -7,8 +7,6 @@ using UnityEngine.InputSystem;
 public class PlayerInputs : MonoBehaviour
 {
     private const float inputEpsilon = 0.5f;
-    [SerializeField] private GameObject[] flashlights = new GameObject[2];
-    [SerializeField] private PlayerSFX playerSFX;
 
     public void RotateCamera(InputAction.CallbackContext context)
     {
@@ -23,17 +21,6 @@ public class PlayerInputs : MonoBehaviour
             Player.Singleton.RotateCamera(Player.Singleton.CurrentRotationIndex + 1);
         else if (value <= -0.5f)
             Player.Singleton.RotateCamera(Player.Singleton.CurrentRotationIndex - 1);
-    }
-
-    public void ToggleFlashlight(InputAction.CallbackContext context)
-    {
-        if (!context.performed || !GameState.Singleton.IsPlaying)
-            return;
-        
-        if (GameState.paused)
-            return;
-
-        Flashlight.Singleton.Toggle();
     }
 
     public void Focus(InputAction.CallbackContext context)
