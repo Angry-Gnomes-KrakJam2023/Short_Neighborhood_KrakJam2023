@@ -61,12 +61,22 @@ public class GameState : MonoBehaviour
 
         Singleton = this;
         OnPlayerDeath += () => {
-            StopGame();
-            Interface.Singleton.ShowGameOverScreen();
-            Flashlight.Singleton.IsBlocked = true;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            StartCoroutine(DelayedPlayerDeath());
         };
+    }
+
+    private IEnumerator DelayedPlayerDeath()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        Fade.Singleton.FadeOut();
+        yield return new WaitForSecondsRealtime(1.2f);
+        StopGame();
+        Interface.Singleton.ShowGameOverScreen();
+        Flashlight.Singleton.IsBlocked = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        yield return new WaitForSecondsRealtime(0.34f);
+        Fade.Singleton.FadeIn();
     }
 
     private void Start()
