@@ -103,6 +103,9 @@ public class GameState : MonoBehaviour
     public void PauseGame()
     {
         Interface.Singleton.ShowPauseMenu();
+        var sources = FindObjectsOfType<AudioSource>();
+        foreach (var source in sources)
+            source.Pause();
         Time.timeScale = 0f;
         paused = true;
         Cursor.lockState = CursorLockMode.None;
@@ -114,5 +117,8 @@ public class GameState : MonoBehaviour
         Time.timeScale = 1f;
         paused = false;
         Cursor.lockState = CursorLockMode.Locked;
+        var sources = FindObjectsOfType<AudioSource>();
+        foreach (var source in sources)
+            source.UnPause();
     }
 }
