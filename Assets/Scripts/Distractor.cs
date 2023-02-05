@@ -22,6 +22,7 @@ public class Distractor : Entity, IMovable, IFlashlightVulnerable
             dissapearParticles.transform.parent = null;
             dissapearParticles.Play();
             //StartCoroutine(throwDissapearParticles(0f));
+            Player.Singleton.PlayEnemyKillSound();
             DestroyMe(0f);
         };
         OnHit += () => {
