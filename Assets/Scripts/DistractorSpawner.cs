@@ -22,7 +22,9 @@ public class DistractorSpawner : MonoBehaviour, ISpawner
             return;
         }
 
-        Distractor enemy = Instantiate(distractorToSpawn, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity).GetComponentInChildren<Distractor>();
+        Quaternion rotation = RoomID == 0 ? Quaternion.Euler(0f, -90f, 0f) : (RoomID == 1 ? Quaternion.identity : Quaternion.Euler(0f, 90f, 0f));
+
+        Distractor enemy = Instantiate(distractorToSpawn, transform.position + new Vector3(0f, 1f, 0f), rotation).GetComponentInChildren<Distractor>();
         enemy.OnDeath += () => HasEnemy = false;
         HasEnemy = true;
     }
