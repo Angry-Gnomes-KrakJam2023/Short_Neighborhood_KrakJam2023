@@ -38308,6 +38308,7 @@ MonoBehaviour:
   - 90
   DefaultAngleIndex: 1
   RotationSpeed: 10
+  enemyDieSFX: {fileID: 8300000, guid: c86929700d4a72649bf85a1b8addd45b, type: 3}
 --- !u!4 &5792078342128966745
 Transform:
   m_ObjectHideFlags: 0
@@ -39058,7 +39059,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.388
   m_Pitch: 1
   Loop: 0
   Mute: 0

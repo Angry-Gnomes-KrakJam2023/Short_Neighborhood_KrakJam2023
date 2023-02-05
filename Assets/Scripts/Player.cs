@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     public List<float> RotationAngles;
     public int DefaultAngleIndex = 1;
     [Range(8f, 20f)] public float RotationSpeed = 1f;
+    
+    private AudioSource audioSource;
+    public AudioClip enemyDieSFX;
 
     public static Player Singleton { get; private set; }
 
@@ -21,6 +24,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         Singleton = this;
+        audioSource = GetComponent<AudioSource>();
         CurrentRotationIndex = DefaultAngleIndex;
         RotateCamera(DefaultAngleIndex);
     }
@@ -44,6 +48,11 @@ public class Player : MonoBehaviour
 
         targetRotation = Quaternion.Euler(0f, RotationAngles[index], 0f);
         CurrentRotationIndex = index;
+    }
+
+    public void PlayEnemyKillSound()
+    {
+        audioSource.PlayOneShot(enemyDieSFX);
     }
 }
  
