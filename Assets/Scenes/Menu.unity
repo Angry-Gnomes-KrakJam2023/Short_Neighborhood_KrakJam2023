@@ -1968,7 +1968,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2024674734}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -5805,7 +5805,7 @@ RectTransform:
   m_Children:
   - {fileID: 840835608}
   m_Father: {fileID: 2024674734}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -5856,7 +5856,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1875780842}
+      - m_Target: {fileID: 2024674735}
         m_TargetAssemblyTypeName: Panel, Assembly-CSharp
         m_MethodName: HidePanel
         m_Mode: 1
@@ -9252,8 +9252,8 @@ RectTransform:
   m_Children:
   - {fileID: 996382285}
   - {fileID: 101686125}
-  - {fileID: 1408120537}
   - {fileID: 477373614}
+  - {fileID: 1408120537}
   - {fileID: 120214475}
   - {fileID: 1347545968}
   m_Father: {fileID: 180638842}
