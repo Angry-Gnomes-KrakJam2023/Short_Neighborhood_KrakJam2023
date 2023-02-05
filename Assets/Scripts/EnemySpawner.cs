@@ -31,6 +31,8 @@ public class EnemySpawner : MonoBehaviour, ISpawner
         Quaternion rotation = RoomID == 0 ? Quaternion.Euler(0f, -90f, 0f) : (RoomID == 1 ? Quaternion.identity : Quaternion.Euler(0f, 90f, 0f));
 
         Enemy enemy = Instantiate(enemyToSpawn, enemySpawnerLocation.position, rotation).GetComponentInChildren<Enemy>();
+        enemy.Health = (int)(40 * GameState.Singleton.HealthMultiplier);
+        enemy.Damage = GameState.Singleton.EnemyDamage;
         enemy.Target = GetComponent<Target>();
         enemy.OnDeath += () => HasEnemy = false;
         HasEnemy = true;

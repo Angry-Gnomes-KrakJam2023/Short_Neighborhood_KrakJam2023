@@ -9,7 +9,6 @@ public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager Singleton {get; private set;}
     private bool isSpawning = true;
-    [SerializeField] private float timeToSpawn = 10f;
 
     private List<ISpawner> spawners = new ();
 
@@ -36,7 +35,10 @@ public class SpawnManager : MonoBehaviour
 
         while (isSpawning)
         {
-            yield return new WaitForSeconds(timeToSpawn);
+            if(GameState.Singleton != null)
+                yield return new WaitForSeconds(GameState.Singleton.SpawnerTime);
+            else
+                yield return new WaitForEndOfFrame();
             IEnumerable<ISpawner> properSpawner = from spawner in spawners where !spawner.HasEnemy &&
                 spawner.RoomID != Player.Singleton.RoomID select spawner;
             int count = properSpawner.ToList().Count;
