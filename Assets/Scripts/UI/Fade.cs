@@ -38,5 +38,6 @@ public class Fade : MonoBehaviour
             lerp += Time.unscaledDeltaTime;
             yield return null;
         }
+        fadeImage.color = new Color (0, 0,0, finish);
     }
 }
