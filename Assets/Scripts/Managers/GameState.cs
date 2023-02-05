@@ -112,6 +112,9 @@ public class GameState : MonoBehaviour
 
     public void PauseGame()
     {
+        if (!IsPlaying)
+            return;
+        
         Interface.Singleton.ShowPauseMenu();
         var sources = FindObjectsOfType<AudioSource>();
         foreach (var source in sources)
@@ -123,6 +126,9 @@ public class GameState : MonoBehaviour
 
     public void ResumeGame()
     {
+        if (!IsPlaying)
+            return;
+        
         Interface.Singleton.HidePauseMenu();
         Time.timeScale = 1f;
         paused = false;
