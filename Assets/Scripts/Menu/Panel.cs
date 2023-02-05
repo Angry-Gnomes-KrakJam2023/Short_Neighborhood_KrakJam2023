@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Panel : MonoBehaviour
 {
-    public void ShowPanel()
+    public virtual void ShowPanel()
     {
         gameObject.SetActive(true);
     }
 
-    public void HidePanel()
+    public virtual void HidePanel()
     {
         gameObject.SetActive(false);
     }
