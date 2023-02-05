@@ -61,8 +61,8 @@ public class GameState : MonoBehaviour
 
         Singleton = this;
         OnPlayerDeath += () => {
-            Interface.Singleton.ShowGameOverScreen();
             StopGame();
+            Interface.Singleton.ShowGameOverScreen();
             Flashlight.Singleton.IsBlocked = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -94,6 +94,10 @@ public class GameState : MonoBehaviour
         Interface.Singleton.HideLivesIndicator();
         Interface.Singleton.HideTextIndicator();
         IsPlaying = false;
+        Time.timeScale = 0f;
+        var sources = FindObjectsOfType<AudioSource>();
+        foreach (var source in sources)
+            source.Stop();
     }
 
     public void PauseGame()
