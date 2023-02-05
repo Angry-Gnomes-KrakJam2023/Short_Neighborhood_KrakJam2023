@@ -7,6 +7,7 @@ public class GameState : MonoBehaviour
 {
     public static GameState Singleton { get; private set; }
 
+    public static bool paused;
     public float HealthMultiplier => 1f + (GameTime / 15) * 0.1f;
     public float MothSpeed => 0.4f + 0.1f * (GameTime / 60);
     public int EnemyDamage => (int)(1 + GameTime / 60);
@@ -56,6 +57,7 @@ public class GameState : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        paused = false;
 
         Singleton = this;
         OnPlayerDeath += () => {
@@ -92,5 +94,21 @@ public class GameState : MonoBehaviour
         Interface.Singleton.HideLivesIndicator();
         Interface.Singleton.HideTextIndicator();
         IsPlaying = false;
+    }
+
+    public void PauseGame()
+    {
+        Interface.Singleton.ShowPauseMenu();
+        Time.timeScale = 0f;
+        paused = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void ResumeGame()
+    {
+        Interface.Singleton.HidePauseMenu();
+        Time.timeScale = 1f;
+        paused = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

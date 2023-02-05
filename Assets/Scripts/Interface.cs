@@ -7,6 +7,7 @@ public class Interface : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject textIndicator;
     [SerializeField] private GameObject livesIndicator;
+    [SerializeField] private Panel pausePanel;
 
     public static Interface Singleton { get; private set; }
     
@@ -41,5 +42,15 @@ public class Interface : MonoBehaviour
     public void HideLivesIndicator()
     {
         livesIndicator.SetActive(false);
+    }
+
+    public void ShowPauseMenu()
+    {
+        pausePanel.ShowPanel();
+    }
+
+    public void HidePauseMenu()
+    {
+        pausePanel.HidePanel();
     }
 }

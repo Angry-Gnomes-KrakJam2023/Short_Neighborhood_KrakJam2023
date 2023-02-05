@@ -22,7 +22,8 @@ public class AsyncSceneLoader : MonoBehaviour
     IEnumerator AsyncLoad(int sceneNumber)
     {
         Fade.Singleton.FadeOut();
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSecondsRealtime(1.2f);
         SceneManager.LoadScene(sceneNumber);
+        Time.timeScale = 1f;
     }
 }
