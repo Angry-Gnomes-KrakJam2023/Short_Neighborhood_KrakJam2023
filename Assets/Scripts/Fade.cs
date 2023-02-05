@@ -35,7 +35,7 @@ public class Fade : MonoBehaviour
         while (Math.Abs(fadeImage.color.a - finish) > 0.02f)
         {
             fadeImage.color = new Color (0, 0,0, Mathf.Lerp(start, finish, fadeCurve.Evaluate(lerp)));
-            lerp += Time.deltaTime;
+            lerp += Time.unscaledDeltaTime;
             yield return null;
         }
     }
