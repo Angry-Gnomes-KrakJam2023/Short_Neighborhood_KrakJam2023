@@ -3668,11 +3668,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 871179193}
   laughs:
-  - {fileID: 8300000, guid: 67c3340ca675a174eadb6d6159b2477a, type: 3}
-  - {fileID: 8300000, guid: fb7a11879118ba748bea6c4b6416199b, type: 3}
-  - {fileID: 8300000, guid: 1757a75837905b247b747fac83f48018, type: 3}
-  - {fileID: 8300000, guid: ed5f11b0f427fc54da1e9d74c20eb19d, type: 3}
-  - {fileID: 8300000, guid: 0963bbc131a26d4468f667aa28cf44c4, type: 3}
+  - {fileID: 8300000, guid: 7475c36c3dc21e0468668ee81e3f7389, type: 3}
+  - {fileID: 8300000, guid: cf7da12780d7f824e9a82c67306a6276, type: 3}
+  - {fileID: 8300000, guid: 8e8bd22d5aaf1fe42aa8021805c6cd9a, type: 3}
+  - {fileID: 8300000, guid: 428a5249aac340f44984aaa29dc74069, type: 3}
+  - {fileID: 8300000, guid: 27e1b8ad18769764fa698e321bc8dbfd, type: 3}
+  - {fileID: 8300000, guid: 139be1df9f275424a90651eb020a3935, type: 3}
   audioSource: {fileID: 871179191}
 --- !u!95 &871179193
 Animator:
@@ -7675,11 +7676,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1728230536}
   laughs:
-  - {fileID: 8300000, guid: 67c3340ca675a174eadb6d6159b2477a, type: 3}
-  - {fileID: 8300000, guid: fb7a11879118ba748bea6c4b6416199b, type: 3}
-  - {fileID: 8300000, guid: 1757a75837905b247b747fac83f48018, type: 3}
-  - {fileID: 8300000, guid: ed5f11b0f427fc54da1e9d74c20eb19d, type: 3}
-  - {fileID: 8300000, guid: 0963bbc131a26d4468f667aa28cf44c4, type: 3}
+  - {fileID: 8300000, guid: 7475c36c3dc21e0468668ee81e3f7389, type: 3}
+  - {fileID: 8300000, guid: cf7da12780d7f824e9a82c67306a6276, type: 3}
+  - {fileID: 8300000, guid: 8e8bd22d5aaf1fe42aa8021805c6cd9a, type: 3}
+  - {fileID: 8300000, guid: 428a5249aac340f44984aaa29dc74069, type: 3}
+  - {fileID: 8300000, guid: 27e1b8ad18769764fa698e321bc8dbfd, type: 3}
+  - {fileID: 8300000, guid: 139be1df9f275424a90651eb020a3935, type: 3}
   audioSource: {fileID: 1728230534}
 --- !u!95 &1728230536
 Animator:
@@ -7928,11 +7930,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1748432415}
   laughs:
-  - {fileID: 8300000, guid: 67c3340ca675a174eadb6d6159b2477a, type: 3}
-  - {fileID: 8300000, guid: fb7a11879118ba748bea6c4b6416199b, type: 3}
-  - {fileID: 8300000, guid: 1757a75837905b247b747fac83f48018, type: 3}
-  - {fileID: 8300000, guid: ed5f11b0f427fc54da1e9d74c20eb19d, type: 3}
-  - {fileID: 8300000, guid: 0963bbc131a26d4468f667aa28cf44c4, type: 3}
+  - {fileID: 8300000, guid: 7475c36c3dc21e0468668ee81e3f7389, type: 3}
+  - {fileID: 8300000, guid: cf7da12780d7f824e9a82c67306a6276, type: 3}
+  - {fileID: 8300000, guid: 8e8bd22d5aaf1fe42aa8021805c6cd9a, type: 3}
+  - {fileID: 8300000, guid: 428a5249aac340f44984aaa29dc74069, type: 3}
+  - {fileID: 8300000, guid: 27e1b8ad18769764fa698e321bc8dbfd, type: 3}
+  - {fileID: 8300000, guid: 139be1df9f275424a90651eb020a3935, type: 3}
   audioSource: {fileID: 1748432413}
 --- !u!95 &1748432415
 Animator:
