@@ -7,6 +7,24 @@ public class GameState : MonoBehaviour
 {
     public static GameState Singleton { get; private set; }
 
+    public float HealthMultiplier => 1f + (GameTime / 15) * 0.1f;
+    public float MothSpeed => 0.4f + 0.1f * (GameTime / 60);
+    public int EnemyDamage => (int)(1 + GameTime / 60);
+    public float SpawnerTime
+    {
+        get
+        {
+            float min = 4f - 0.1f * (GameTime / 10);
+            if (min < 1.5f)
+                min = 1.5f;
+            float max = 8f - 0.2f * (GameTime / 10);
+            if (max < 1.5f)
+                max = 1.5f;
+
+            return UnityEngine.Random.Range(min, max);
+        }
+    }
+
     public float GameTime
     {
         get => gameTime;
@@ -57,7 +75,7 @@ public class GameState : MonoBehaviour
     private void FixedUpdate()
     {
         if (IsPlaying)
-            GameTime += Time.fixedUnscaledDeltaTime;
+            GameTime += Time.fixedDeltaTime;
     }
 
     public void StartGame()

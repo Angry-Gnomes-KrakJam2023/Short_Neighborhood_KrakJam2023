@@ -6,7 +6,7 @@ public class Distractor : Entity, IMovable, IFlashlightVulnerable
 {
     [SerializeField] private float moveSpeed;
 
-    public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
+    public float MoveSpeed { get => GameState.Singleton.MothSpeed; set => moveSpeed = value; }
     LightTypes IFlashlightVulnerable.VulnerableType { get; set; } = LightTypes.UV;
 
     private SpriteRenderer sr;
@@ -32,7 +32,7 @@ public class Distractor : Entity, IMovable, IFlashlightVulnerable
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target, MoveSpeed * Time.deltaTime);
     }
 
     public void Move(Vector3 pos)

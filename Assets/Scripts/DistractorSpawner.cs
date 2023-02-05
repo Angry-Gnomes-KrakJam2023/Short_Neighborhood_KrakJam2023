@@ -26,6 +26,7 @@ public class DistractorSpawner : MonoBehaviour, ISpawner
 
         Distractor enemy = Instantiate(distractorToSpawn, transform.position + new Vector3(0f, 1f, 0f), rotation).GetComponentInChildren<Distractor>();
         enemy.OnDeath += () => HasEnemy = false;
+        enemy.Health = (int)(80 * GameState.Singleton.HealthMultiplier);
         HasEnemy = true;
     }
 
