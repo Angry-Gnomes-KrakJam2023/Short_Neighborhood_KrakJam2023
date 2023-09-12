@@ -41,7 +41,7 @@ Main Programmer
 
 | Find me on: | |
 |---|---|
-| <a href="https://discordapp.com/users/178229774852947968"><img src="https://user-images.githubusercontent.com/57668948/218463185-ebdcb4bd-1eb2-4172-b2df-6b6a09b07d20.svg" alt="Discord" width="100%" height="50"/></a> | [ßadDoggo#1450](https://discordapp.com/users/178229774852947968) |
+| <a href="https://discordapp.com/users/178229774852947968"><img src="https://user-images.githubusercontent.com/57668948/218463185-ebdcb4bd-1eb2-4172-b2df-6b6a09b07d20.svg" alt="Discord" width="100%" height="50"/></a> | [jbklsny](https://discordapp.com/users/178229774852947968) |
 | <a href="https://github.com/kaybenot"><img src="https://user-images.githubusercontent.com/57668948/218457932-7fd047d5-04a4-4c9d-a620-71f567ad5cd0.svg" alt="Github" width="100%" height="50"/></a> | [Kaybe](https://github.com/kaybenot) |
 
 ### Paweł Król
@@ -50,7 +50,7 @@ Programmer/Sound
 
 | Find me on: | |
 |---|---|
-| <a href="https://discordapp.com/users/311865334565044224"><img src="https://user-images.githubusercontent.com/57668948/218463185-ebdcb4bd-1eb2-4172-b2df-6b6a09b07d20.svg" alt="Discord" width="100%" height="50"/></a> | [Kimel#0752](https://discordapp.com/users/311865334565044224) |
+| <a href="https://discordapp.com/users/311865334565044224"><img src="https://user-images.githubusercontent.com/57668948/218463185-ebdcb4bd-1eb2-4172-b2df-6b6a09b07d20.svg" alt="Discord" width="100%" height="50"/></a> | [kimel](https://discordapp.com/users/311865334565044224) |
 | <a href="https://github.com/Kimel-PK"><img src="https://user-images.githubusercontent.com/57668948/218457932-7fd047d5-04a4-4c9d-a620-71f567ad5cd0.svg" alt="Github" width="100%" height="50"/></a> | [Kimel-PK](https://github.com/Kimel-PK) |
 
 ### Izabela Kruczkowska
